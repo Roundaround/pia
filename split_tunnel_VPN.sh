@@ -155,7 +155,7 @@ fi
 echo
 echo Flush current iptables rules
 iptables -F
-echo Add rule, which will block vpn user’s access to Internet (except the loopback device). 
+echo Add rule, which will block vpn user’s access to Internet except the loopback device. 
 iptables -A OUTPUT ! -o lo -m owner --uid-owner vpn -j DROP
 echo Install iptables-persistent to save this single rule that will be always applied on each system start.
 echo
